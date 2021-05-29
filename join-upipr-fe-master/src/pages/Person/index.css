@@ -1,3 +1,69 @@
 .person h1 {
-    color: #ecd014;
+  color: #ecd014;
+}
+
+.main-card {
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: 5px solid #110b0b;
+  border-radius: 5px;
+}
+
+.card-container {
+  color: white;
+}
+
+.details-1 {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.details-2 {
+  text-align: center;
+  margin-top: 5%;
+  line-height: 30px;
+}
+
+.details-3 {
+  margin-top: 5%;
+}
+
+.details-3 > div {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.show-container {
+  width: 60%;
+  margin-top: 2%;
+}
+
+.show-container > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.show-container > div > div {
+  width: 30%;
+  text-align: center;
+}
+
+.show-container > div > div > h3 {
+  color: #ecd014;
+}
+.show-container > div > div > p {
+  color: white;
+}
+.showdata-head {
+  color: #ecd014;
+  text-align: center;
+}
+
+.show-error {
+  color: white;
+  text-align: center;
 }
