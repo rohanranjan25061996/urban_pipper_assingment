@@ -112,10 +112,10 @@ function Person() {
       </div>
       <div className = "details-3">
         {!isLoading &&   <div>
-          <img src = {vehicles} alt = {vehicles} width = "50" onClick = {onVehiclesData} />
-          <img src = {films} alt = {films} width = "50" onClick = {onFilmData}/>
-          <img src = {starships} alt = {starships} width = "50" onClick = {onStarshipsData}/>
-          <img src = {species} alt = {species} width = "50" onClick = {onSpeciesData}/>
+          <img src = "https://i.postimg.cc/FKJjjLtH/car.png" alt = {vehicles} width = "50" onClick = {onVehiclesData} />
+          <img src = "https://i.postimg.cc/J0RZVYss/film.png" alt = {films} width = "50" onClick = {onFilmData}/>
+          <img src = "https://i.postimg.cc/FR4J3CgT/starships.png" alt = {starships} width = "50" onClick = {onStarshipsData}/>
+          <img src = "https://i.postimg.cc/ncR7gkpL/species.png" alt = {species} width = "50" onClick = {onSpeciesData}/>
         </div>}
       </div >
     </div>
