@@ -33,4 +33,4 @@ Using STAR-WARS API creating Live Search Box and Character page with some cool d
 
 ### Note:-
 
-<p> This website is not responsible for other devices expect laptop, still I' m working on it. Sorry for inconvenience!</p>
+<p> This website is not responsive for other devices expect laptop, still I' m working on it. Sorry for inconvenience!</p>
