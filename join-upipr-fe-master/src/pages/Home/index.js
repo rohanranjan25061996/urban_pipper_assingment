@@ -4,8 +4,6 @@ import './index.css';
 import Loader from "react-loader-spinner";
 import { useHistory } from 'react-router';
 import Axios from "axios"
-import NotFound from '../NotFound';
-// import {MoveCursor} from "./MoveCursor"
 
 function HomePage() {
   const [cursor, setCursor] = React.useState(0)
@@ -65,6 +63,7 @@ function HomePage() {
     }
   }
 
+  // changing current value of input value to the data cursor value
   const inputValue = (ok) => {
     queryRef.current.value = data[cursor].name
     
@@ -95,7 +94,6 @@ function HomePage() {
         </li>)}
       </ul>}
       {isError && <p className = "show-error"> Invalid Input! </p>}
-      {/* {data.length > 0 && <MoveCursor data = {data} length = {data.length} cursor = {cursor} />} */}
     </div>
   );
 }
