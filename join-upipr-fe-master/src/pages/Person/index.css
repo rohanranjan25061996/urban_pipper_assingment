@@ -5,8 +5,21 @@
 .main-card {
   width: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  border: 5px solid #110b0b;
   border-radius: 5px;
+  padding: 10px;
+}
+
+.main-card :hover {
+  transition: 0.3s transform cubic-bezier(0.25, 0.46, 0.45, 1);
+  background: linear-gradient(to bottom right, #3c4bbd 15%, transparent),
+    radial-gradient(
+        circle at 100% 0%,
+        rgba(255, 255, 255, 0.2) 10%,
+        transparent 20%
+      )
+      center center / 15px 15px,
+    linear-gradient(to bottom right, #3c4bbd, #57add8);
+  color: #ecd014;
 }
 
 .card-container {
@@ -26,7 +39,7 @@
 }
 
 .details-3 {
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .details-3 > div {
@@ -35,9 +48,13 @@
   cursor: pointer;
 }
 
+.details-3 > div :hover {
+  transform: translate(-1px, 1px) scale(0.75);
+}
+
 .show-container {
   width: 60%;
-  margin-top: 2%;
+  margin-top: 0%;
 }
 
 .show-container > div {
@@ -61,6 +78,19 @@
 .showdata-head {
   color: #ecd014;
   text-align: center;
+}
+
+.showdata-div > div {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.showdata-div :hover {
+  transform: rotateY(-5deg) translateZ(34px) scale(0.98);
+  transition: transform 600ms cubic-bezier(0.39, 0.575, 0.565, 1),
+    opacity 300ms ease;
+  background: linear-gradient(#e96874, #6e3663, #2b0830);
 }
 
 .show-error {

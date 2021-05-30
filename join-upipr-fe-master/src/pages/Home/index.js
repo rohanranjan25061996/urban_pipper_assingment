@@ -4,6 +4,8 @@ import './index.css';
 import Loader from "react-loader-spinner";
 import { useHistory } from 'react-router';
 import Axios from "axios"
+import NotFound from '../NotFound';
+// import {MoveCursor} from "./MoveCursor"
 
 function HomePage() {
   const [cursor, setCursor] = React.useState(0)
@@ -29,7 +31,6 @@ function HomePage() {
   // In handelSearchQuery function calling Axios to get data from API, set the result data to in our DATA.
   // BASE URL is persent in .env file, that why here we are using process.env
   const handelSearchQuery = (e) => {
-    // const {value} = e.target
     setLoading(true)
     setError(false)
     Axios.get(`${process.env.REACT_APP_PUBLIC_URL}?search=${queryRef.current.value}`)
@@ -50,9 +51,23 @@ function HomePage() {
   const handelKeyDown = (e) => {
     if(e.keyCode == 38 && cursor > 0){
       setCursor(prev => prev - 1)
+      inputValue()
     }else if(e.keyCode == 40 && cursor < data.length-1){
       setCursor(prev => prev+1)
-    } 
+      inputValue()
+    }else if(e.keyCode == 13){
+      if(queryRef.current.value != ""){
+        const id = queryRef.current.value
+        redirectToPerson(id)
+      }else{
+        setError(true)
+      }
+    }
+  }
+
+  const inputValue = (ok) => {
+    queryRef.current.value = data[cursor].name
+    
   }
 
   // when user click on any search result, this function will call and it will push to person page.
@@ -65,7 +80,7 @@ function HomePage() {
       <div className="logo">
         <img src={logo} alt="Star Wars Logo" />
       </div>
-      <input className="search-input" placeholder="Search by name" ref = {queryRef}onChange = {optimizeVersion} onKeyDown = {handelKeyDown} />
+      <input className="search-input" placeholder="Search by name" ref = {queryRef} onChange = {optimizeVersion} onKeyDown = {handelKeyDown} />
       <div className="loader-div"> {isLoading && <div className="loader-main"> <Loader type="ThreeDots" color = "#ffeb0f" height="50" width="50" /> </div>} </div>
       {data.length > 0 && <ul className = "search-list">
         {data && !isError && data.map((item, i) => <li keys = {item.name} className = {cursor == i ? "active" : null} onClick = {() => redirectToPerson(item.name)}>
@@ -79,7 +94,8 @@ function HomePage() {
           {i < data.length-1 && <hr className = "hr-tag"></hr>}
         </li>)}
       </ul>}
-      {isError && "No Such Data Available"}
+      {isError && <p className = "show-error"> Invalid Input! </p>}
+      {/* {data.length > 0 && <MoveCursor data = {data} length = {data.length} cursor = {cursor} />} */}
     </div>
   );
 }
