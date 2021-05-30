@@ -1,6 +1,6 @@
 # Urban Piper Assignment
 
-Using STAR-WARS API creating Search Box and Character page with some cool details about characters.
+Using STAR-WARS API creating Live Search Box and Character page with some cool details about characters.
 
 ## Landing Page:
 
