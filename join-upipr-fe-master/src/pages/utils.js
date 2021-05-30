@@ -3,7 +3,7 @@ import Axios from "axios"
 
 // This callAPI function take one argument which is API URL and its return a promise
 const callAPI = (url) => {
-
+    url = url.replace("http", "https")
     return Axios.get(url)
 }
 

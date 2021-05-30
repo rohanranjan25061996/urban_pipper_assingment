@@ -21,7 +21,7 @@ function ShowVehiclesData() {
         <>
         <h3 className="showdata-head"> VEHICLES </h3>
        {isError ? <p className="show-error"> Sorry, Data Not Available! </p> :  <div className="showdata-div">
-           {data && data.map((item) => <div>
+           {data && data.map((item) => <div key={item.name}>
             <p> Name : {item.name} </p>
            <p> Model {item.model} </p>
            <p> Length: {item.length} </p>

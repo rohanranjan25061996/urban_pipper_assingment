@@ -23,7 +23,7 @@ function ShowSpeciesData() {
         <>
         <h3 className="showdata-head"> SPECIES </h3>
        {isError ? <p className="show-error"> Sorry, Data Not Available! </p> :  <div className="showdata-div">
-           {data && data.map((item) => <div>
+           {data && data.map((item) => <div key={item.name}>
             <p> Name : {item.name.charAt(0).toUpperCase() + item.name.slice(1)} </p>
             <p> Classification : {item.classification.charAt(0).toUpperCase() + item.classification.slice(1)} </p>
             <p> Designation : {item.designation.charAt(0).toUpperCase() + item.designation.slice(1)} </p>

@@ -3,10 +3,10 @@ import { useParams } from 'react-router';
 import './index.css';
 import Axios from "axios"
 import {GiBodyHeight, GiFleshyMass} from "react-icons/gi"
-import vehicles from "../../Images/car.png"
-import films from "../../Images/film.png"
-import species from "../../Images/species.png"
-import starships from "../../Images/starships.png"
+import vehicles from "./Images/car.png"
+import films from "./Images/film.png"
+import species from "./Images/species.png"
+import starships from "./Images/starships.png"
 import { ShowFilmData } from './ShowFilmdata';
 import { refineData } from '../utils';
 import {ShowVehiclesData} from "./showVehiclesData"
@@ -31,7 +31,7 @@ function Person() {
   const getDataFromAPI = () => {
     setLoading(true)
     setError(false)
-    Axios.get(`${process.env.REACT_APP_BASE_URL}?search=${id}`)
+    Axios.get(`${process.env.REACT_APP_PUBLIC_URL}?search=${id}`)
     .then((res) => {
       setLoading(false)
       setError(false)

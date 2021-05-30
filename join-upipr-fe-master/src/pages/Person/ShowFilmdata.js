@@ -21,7 +21,7 @@ function ShowFilmData() {
         <>
         <h3 className="showdata-head"> FILM </h3>
        {isError ? <p className="show-error"> Sorry, Data Not Available! </p> :  <div className="showdata-div">
-           {data && data.map((item) => <div>
+           {data && data.map((item) => <div key={item.title}>
             <h3>  {item.title} </h3>
            <p>  {item.opening_crawl} </p>
            </div>)}

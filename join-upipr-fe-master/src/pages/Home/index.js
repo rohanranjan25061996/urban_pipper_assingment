@@ -32,7 +32,7 @@ function HomePage() {
     // const {value} = e.target
     setLoading(true)
     setError(false)
-    Axios.get(`${process.env.REACT_APP_BASE_URL}?search=${queryRef.current.value}`)
+    Axios.get(`${process.env.REACT_APP_PUBLIC_URL}?search=${queryRef.current.value}`)
     .then((res) => {
       setData(res.data.results)
       setLoading(false)
