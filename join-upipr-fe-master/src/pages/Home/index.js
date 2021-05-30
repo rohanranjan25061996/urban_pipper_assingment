@@ -49,10 +49,10 @@ function HomePage() {
   const handelKeyDown = (e) => {
     if(e.keyCode == 38 && cursor > 0){
       setCursor(prev => prev - 1)
-      inputValue()
+      inputValue("minus")
     }else if(e.keyCode == 40 && cursor < data.length-1){
       setCursor(prev => prev+1)
-      inputValue()
+      inputValue("plus")
     }else if(e.keyCode == 13){
       if(queryRef.current.value != ""){
         const id = queryRef.current.value
@@ -65,7 +65,7 @@ function HomePage() {
 
   // changing current value of input value to the data cursor value
   const inputValue = (ok) => {
-    queryRef.current.value = data[cursor].name
+    queryRef.current.value = ok == "plus" ? data[cursor+1].name : data[cursor-1].name
     
   }
 
