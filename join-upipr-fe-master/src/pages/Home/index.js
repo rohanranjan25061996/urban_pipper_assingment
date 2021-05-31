@@ -31,10 +31,15 @@ function HomePage() {
   const handelSearchQuery = (e) => {
     setLoading(true)
     setError(false)
-    Axios.get(`${process.env.REACT_APP_PUBLIC_URL}?search=${queryRef.current.value}`)
+    Axios.get(`${process.env.REACT_APP_PUBLIC_URL}?search=${true && queryRef.current.value}`)
     .then((res) => {
-      setData(res.data.results)
-      setLoading(false)
+      if(res.data.results.length == 0){
+        setError(true)
+        setLoading(false)
+      }else{
+        setData(res.data.results)
+        setLoading(false)
+      }
     })
     .catch((err) => {
       setError(true)
@@ -47,18 +52,31 @@ function HomePage() {
 
   // handelKeyDown function using for show effect when user press key up and down.
   const handelKeyDown = (e) => {
-    if(e.keyCode == 38 && cursor > 0){
-      setCursor(prev => prev - 1)
-      inputValue("minus")
-    }else if(e.keyCode == 40 && cursor < data.length-1){
-      setCursor(prev => prev+1)
-      inputValue("plus")
-    }else if(e.keyCode == 13){
-      if(queryRef.current.value != ""){
-        const id = queryRef.current.value
-        redirectToPerson(id)
-      }else{
-        setError(true)
+
+    if(data.length == 1 && e.keyCode == 38){
+      queryRef.current.value = data[0].name
+    }else if(data.length == 1 && e.keyCode == 40){
+      queryRef.current.value = data[0].name
+    }else if(e.keyCode == 13 && data.length == 1){
+      const id = queryRef.current.value
+      redirectToPerson(id)
+    }else{
+      if(e.keyCode == 38 && cursor > 0){
+        setCursor(prev => prev - 1)
+        inputValue("minus")
+      }else if(e.keyCode == 40 && cursor < data.length-1){
+        setCursor(prev => prev+1)
+        inputValue("plus")
+      }else if(e.keyCode == 13){
+        if(queryRef.current.value != "" && data.length != 0){
+          const id = queryRef.current.value
+          redirectToPerson(id)
+        }else if(queryRef.current.value != "" && data.length == 0){
+          setError(true)
+        }
+        else{
+          setError(true)
+        }
       }
     }
   }
@@ -81,7 +99,7 @@ function HomePage() {
       </div>
       <input className="search-input" placeholder="Search by name" ref = {queryRef} onChange = {optimizeVersion} onKeyDown = {handelKeyDown} />
       <div className="loader-div"> {isLoading && <div className="loader-main"> <Loader type="ThreeDots" color = "#ffeb0f" height="50" width="50" /> </div>} </div>
-      {data.length > 0 && <ul className = "search-list">
+      {data.length > 0 && !isError && <ul className = "search-list">
         {data && !isError && data.map((item, i) => <li keys = {item.name} className = {cursor == i ? "active" : null} onClick = {() => redirectToPerson(item.name)}>
           <div>
             <p>{item.name}</p>
