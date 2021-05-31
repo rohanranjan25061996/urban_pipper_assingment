@@ -101,7 +101,7 @@ function HomePage() {
       <div className="loader-div"> {isLoading && <div className="loader-main"> <Loader type="ThreeDots" color = "#ffeb0f" height="50" width="50" /> </div>} </div>
       {data.length > 0 && !isError && <ul className = "search-list">
         {data && !isError && data.map((item, i) => <li keys = {item.name} className = {cursor == i ? "active" : null} onClick = {() => redirectToPerson(item.name)}>
-          <div>
+          <div className="great">
             <p>{item.name}</p>
             <p> {item.gender.charAt(0).toUpperCase() + item.gender.slice(1)}</p>
           </div>

@@ -38,7 +38,7 @@
   width: 400px;
   padding: 16px 24px;
   background-color: #2d2e30;
-  color: white;
+  color: #f2f2f2;
   list-style-type: none;
   border-radius: 25px;
   border: 0;
@@ -61,4 +61,87 @@ ul > li > div {
 
 .hr-tag {
   color: gray;
+}
+
+@media (max-width: 576px) {
+  .search-input {
+    width: 300px;
+    padding: 16px 24px;
+    border-radius: 25px;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    background: #2d2f30;
+    color: #f2f2f2;
+  }
+  .search-list {
+    width: 300px;
+    padding: 16px 24px;
+    background-color: #2d2e30;
+    color: green;
+    list-style-type: none;
+    border-radius: 25px;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: 58.5%;
+    cursor: pointer;
+    line-height: 0px;
+  }
+  .search-list {
+    border: 1px solid green;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-list {
+    border: 1px solid red;
+    width: 400px;
+    padding: 16px 24px;
+    background-color: #2d2e30;
+    color: #f2f2f2;
+    list-style-type: none;
+    border-radius: 25px;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: 61.5%;
+    cursor: pointer;
+    line-height: 0px;
+  }
+}
+
+@media (max-width: 992px) {
+  .search-list {
+    border: 1px solid red;
+    width: 400px;
+    padding: 16px 24px;
+    background-color: #2d2e30;
+    color: #f2f2f2;
+    list-style-type: none;
+    border-radius: 25px;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: 61.5%;
+    cursor: pointer;
+    line-height: 0px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .search-list {
+    width: 400px;
+    padding: 16px 24px;
+    background-color: #2d2e30;
+    color: #f2f2f2;
+    list-style-type: none;
+    border-radius: 25px;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: 61.5%;
+    cursor: pointer;
+    line-height: 0px;
+  }
 }
