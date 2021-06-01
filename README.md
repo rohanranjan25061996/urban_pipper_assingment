@@ -4,7 +4,7 @@ Using STAR-WARS API creating Live Search Box and Character page with some cool d
 
 ## Landing Page:
 
-<p> When we click any of the search results, we move to the Person page to know cool things about Person or Character. </p>
+<p> When we click any of the search results, we move to the Person page to know cool things about Person or Character. Here User can also use Up and Down Arrow Key for visiting every search results and also when User Press Enter it move to that Person or Character page. </p>
 <img src="Screenshot/pic5.png">
 
 ## Person Page:
