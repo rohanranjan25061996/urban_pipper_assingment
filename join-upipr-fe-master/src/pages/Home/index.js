@@ -92,6 +92,10 @@ function HomePage() {
 
     history.push( `person/${id}` )
   }
+
+  const UnselectedNumber = (i) => {
+    console.log(i)
+  }
   return (
     <div>
       <div className="logo">
